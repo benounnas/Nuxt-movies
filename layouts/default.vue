@@ -9,7 +9,7 @@ const openNav = () => {
 </script>
 
 <template>
-  <div class="flex flex-row flex-wrap max-h-full h-full">
+  <div class="flex h-screen">
     <ul class="menu bg-slate-800 text-white p-2 flex flex-col justify-center">
       <li class="m-3">
         <NuxtLink to="/">
@@ -35,9 +35,11 @@ const openNav = () => {
         </NuxtLink>
       </li>
     </ul>
-    <div class="grow h-screen">
-      <NuxtLoadingIndicator />
-      <slot />
+    <div class="flex-1 flex overflow-hidden">
+      <div class="flex-1 overflow-y-scroll">
+        <NuxtLoadingIndicator />
+        <slot />
+      </div>
     </div>
   </div>
 </template>
