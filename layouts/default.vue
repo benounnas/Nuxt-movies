@@ -1,42 +1,54 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const open = ref(false)
+const open = ref(false);
 
 const openNav = () => {
-  open.value = !open.value
-}
+  open.value = !open.value;
+};
 </script>
 
 <template>
-  <div>
-    <header class="shadow-md w-full fixed top-0 left-0">
-      <div
-        class="md:flex items-center justify-between bg-white py-4 md:px-10 px-7"
-      >
-        <Icon name="uil:github" />
-        <div
-          class="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] text-gray-800"
-        >
-          Designer
-        </div>
+  <div class="flex flex-row flex-wrap max-h-full h-full">
+    <ul class="menu bg-slate-800 text-white p-2 flex flex-col justify-center">
+      <li class="m-3">
+        <NuxtLink to="/">
+          <Icon name="akar-icons:home" width="25" height="25" />
+        </NuxtLink>
+      </li>
 
-        <ul
-          class="md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in"
-        >
-          <li class="md:ml-8 text-xl md:my-0 my-7">
-            <a href="" class="text-gray-800 hover:text-gray-400 duration-500"
-              >Home
-            </a>
-          </li>
-          <li class="md:ml-8 text-xl md:my-0 my-7">
-            <a href="" class="text-gray-800 hover:text-gray-400 duration-500"
-              >Contact
-            </a>
-          </li>
-        </ul>
-      </div>
-    </header>
-    <Nuxt />
+      <li class="m-3">
+        <NuxtLink to="/movies">
+          <Icon name="icon-park-solid:movie" width="25" height="25" />
+        </NuxtLink>
+      </li>
+
+      <li class="m-3">
+        <NuxtLink to="/tv">
+          <Icon name="eva:tv-fill" width="25" height="25" />
+        </NuxtLink>
+      </li>
+
+      <li class="m-3">
+        <NuxtLink to="/search">
+          <Icon name="akar-icons:search" width="25" height="25" />
+        </NuxtLink>
+      </li>
+    </ul>
+    <div class="grow h-screen">
+      <NuxtLoadingIndicator />
+      <slot />
+    </div>
   </div>
 </template>
+<style>
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
+</style>
