@@ -23,7 +23,7 @@ const item = await listMedia(query.type, query.query, 1);
       :key="i.id"
       :item="i"
       :type="query.type"
-      class="flex-1 w-60"
+      class="flex-1"
     />
   </CarouselBase>
 </template>

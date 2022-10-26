@@ -10,7 +10,7 @@ const openNav = () => {
 
 <template>
   <div class="flex h-screen">
-    <ul class="menu bg-slate-800 text-white p-2 flex flex-col justify-center">
+    <ul class="menu bg-slate-900 text-white p-2 flex flex-col justify-center">
       <li class="m-3">
         <NuxtLink to="/">
           <Icon name="akar-icons:home" width="25" height="25" />
@@ -39,6 +39,12 @@ const openNav = () => {
       <div class="flex-1 overflow-y-scroll">
         <NuxtLoadingIndicator />
         <slot />
+
+        <footer class="footer footer-center p-4 bg-slate-800 text-white">
+          <div>
+            <p>Copyright © 2022 - Made with Love & Music by Benounnas</p>
+          </div>
+        </footer>
       </div>
     </div>
   </div>

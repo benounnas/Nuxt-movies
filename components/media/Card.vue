@@ -8,10 +8,8 @@ defineProps<{
 </script>
 
 <template>
-  <NuxtLink :to="`/${item.media_type || type}/${item.id}`" pb2>
-    <div
-      class="block text-white bg-zinc-800 transition duration-400 hover:scale-100 border-solid border-white border-4 z-10"
-    >
+  <NuxtLink :to="`/${item.media_type || type}/${item.id}`" class="pb-2">
+    <div class="min-w-max h-80 border-solid border-zinc-300 border-4 z-10">
       <NuxtImg
         v-if="item.poster_path"
         width="400"
