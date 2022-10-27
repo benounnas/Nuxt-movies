@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { useMediaQuery } from "@vueuse/core";
 
 const open = ref(false);
-
+const isMediumScreen = useMediaQuery("(min-width: 768px)");
 const openNav = () => {
   open.value = !open.value;
 };
@@ -10,7 +11,10 @@ const openNav = () => {
 
 <template>
   <div class="flex h-screen">
-    <ul class="menu bg-slate-900 text-white p-2 flex flex-col justify-center">
+    <ul
+      v-if="isMediumScreen"
+      class="menu bg-slate-900 text-white p-2 flex flex-col justify-center"
+    >
       <li class="m-3">
         <NuxtLink to="/">
           <Icon name="akar-icons:home" width="25" height="25" />
@@ -35,6 +39,8 @@ const openNav = () => {
         </NuxtLink>
       </li>
     </ul>
+
+    <NavigationBottom v-else />
     <div class="flex-1 flex overflow-hidden">
       <div class="flex-1 overflow-y-scroll">
         <NuxtLoadingIndicator />
