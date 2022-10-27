@@ -33,7 +33,10 @@ onMounted(() => {
             {{ item.overview }}
           </p>
 
-          <ButtonTrailer :video="item.videos.results[0]" />
+          <ButtonTrailer
+            :video="item.videos.results[0]"
+            :button-class="'btn btn-warning hover:btn-outline '"
+          />
         </div>
       </div>
     </section>
