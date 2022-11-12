@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { MediaType } from "~/types";
+definePageMeta({ middleware: "redirect" });
+/* import type { MediaType } from "~/types";
 import { QUERY_LIST } from "~/constants/lists";
 import { listMedia } from "~~/composables/tmdb";
 
@@ -13,9 +14,9 @@ const list = await listMedia(type.value, queries.value[0].query, 1);
 const item = await getMedia(type.value, list.results[0].id);
 onMounted(() => {
   // console.log(item.videos.results[0]);
-});
+}); */
 </script>
-
+<!-- 
 <template>
   <div>
     <section
@@ -49,4 +50,4 @@ onMounted(() => {
       />
     </section>
   </div>
-</template>
+</template> -->

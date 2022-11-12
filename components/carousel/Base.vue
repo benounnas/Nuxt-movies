@@ -24,7 +24,7 @@ function scrollRight() {
   </div>
   <div class="relative">
     <div
-      class="bg-slate-800 flex gap-2 overflow-x-auto scrollbar"
+      class="bg-slate-800 flex gap-2 overflow-x-auto scrollbar px-6"
       ref="scrollEl"
     >
       <slot />
